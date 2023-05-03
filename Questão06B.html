@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+    display:  grid;
+    height: 98vh;
+    width: 98vw;
+    grid-template-areas:
+    "header header header header"
+    "left content content content"
+    "footer footer footer footer";
+}
+.box{
+    margin: 2px;
+}
+.content{
+    background-color: grey;
+    grid-area: content;
+    height: 600px;  
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.chat{
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+input{
+    height: 100px;
+    width: 500px;
+    border: 3px solid black;
+}
+button{
+    display: flex;
+    border: 3px solid black;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    background-color: orange;
+    grid-area: left;
+    height: 600px; 
+}
+.header{
+    background-color: blue;
+    grid-area: header;
+    height: 170px;
+}
+.footer{
+     background-color: green;
+    grid-area: footer;
+    height: 150px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box content">
+            <div class="chat">
+                <input type="text"></input>
+                <button>ENVIAR</button>
+            </div>
+        </div>
+        <div class="box left">.left</div>
+        <div class="box footer">.footer</div>
+        <div class="box header">.header</div>
+</body>
+</html>
