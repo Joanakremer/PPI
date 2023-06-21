@@ -1,11 +1,12 @@
 <?php 
 include('conexao.php');
 
-if(isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['nome']) || isset($_POST['idade'])|| isset($_POST['peso'])){
+if(isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['nome']) || isset($_POST['raca']) || isset($_POST['idade'])|| isset($_POST['peso'])){
     
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $nome = $_POST['nome'];
+    $raca = $_POST['raca'];
     $idade= $_POST['idade'];
     $peso = $_POST['peso'];
 
@@ -36,67 +37,74 @@ if(isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['nome']) || 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
+    <style>
+        body{
+            height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+       #container{
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+            height: 500px;
+            border: solid;
+       }
+       #cabecalho{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+       }
+       #campos{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        input{
+            height: 35px;
+        }
+        #botao{
+            padding: 10px;
+            height: 5%;
+            display: flex;
+            align-items: end;
+            justify-content: right;
+        }
+        button{
+            height: 35px;
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<style>
-   body{
-        height: 98vh;
-        width: 98vw;
-        background-color: lightblue;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #botoes{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-direction: column;
-    }
-    p{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #email{
-        margin-top: 25px;
-    }
-    #senha{
-        margin-bottom: 35px;
-    }
-    #form{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 450px;
-        height: 450px;
-        border: solid black 1px;
-    }
-    button{
-        background-color: yellow;
-        border-radius: 5%;
-        width: 100px;
-        height: 25px;
-        border: 0px;
-        margin-bottom: 15px;
-    }
-</style>
 <body>
-<div id="form">
-        <h1>Insira suas credenciais</h1>
+    <div id="container">
+        <div id="cabecalho">
+            <h1 style="font-size: 400%;">Cadastrar</h1>
+        </div>
+        <br>
         <form action="" method="POST">
-            <p id="email">
-                <label for="email">E-mail</label>  
-                <input type="text" name="email"> 
-            </p>
-            <p id="senha">
-                <label for="senha">Senha</label>  
-                <input type="password" name="senha"> 
-            </p>
-            <div id="botoes">
-                 <button type="submit">Cadastrar</button>
+            <div id="campos">
+                <input type="text" name="email" placeholder="EMAIL"> 
+                <br>
+                <input type="password" name="senha" placeholder="SENHA"> 
+                <br>
+                <input type="text" name="nome" placeholder="NOME CACHORRO"> 
+                <br>
+                <input type="text" name="raca" placeholder="RAÇA"> 
+                <br>
+                <input type="text" name="idade" placeholder="IDADE"> 
+                <br>
+                <input type="text" name="peso" placeholder="PESO(KG)"> 
+                <br>
+            </div>
+            <div id="botao">
+                <button type="submit">Cadastrar</button>
             </div>
         </form>
-    </div> 
+    </div>
 </body>
 </html>

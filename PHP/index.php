@@ -23,71 +23,65 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Entrar</title>
+    <style>
+        body{
+            background-color: #ececec;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+       #container{
+        background-color: white;
+            padding: 20px;
+            width: 300px;
+            height: 250px;
+            border: solid;
+       }
+       #cabecalho{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+       }
+       #campos{
+        padding: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        input{
+            height: 35px;
+        }
+        #botao{
+            height: 5vh;
+            display: flex;
+            align-items: end;
+            justify-content: space-around;
+        }
+    </style>
 </head>
-<style>
-    body{
-        height: 98vh;
-        width: 98vw;
-        background-color: lightblue;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #botoes{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-direction: column;
-    }
-    p{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #email{
-        margin-top: 25px;
-    }
-    #senha{
-        margin-bottom: 35px;
-    }
-    #form{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 450px;
-        height: 450px;
-        border: solid black 1px;
-    }
-    button{
-        background-color: yellow;
-        border-radius: 5%;
-        width: 100px;
-        height: 25px;
-        border: 0px;
-        margin-bottom: 15px;
-    }
-</style>
 <body>
-    <div id="form">
-        <h1>ACESSE SUA CONTA</h1>
+    <div id="container">
+        <div id="cabecalho">
+            <h1 style="font-size: 400%;">Entrar</h1>
+        </div>
         <form action="" method="POST">
-            <p id="email">
-                <label for="email">E-mail</label>  
-                <input type="text" name="email"> 
-            </p>
-            <p id="senha">
-                <label for="senha">Senha</label>  
-                <input type="password" name="senha"> 
-            </p>
-            <div id="botoes">
-                 <button type="submit">Entrar</button>
-                 <a id="sign" href="cadastro.php">Inscrever-se</a>
+            <div id="campos">
+                <BR></BR>
+                <input type="text" name="email" placeholder="EMAIL" > 
+                <br>
+                <input type="password" name="senha" placeholder="SENHA" > 
+                <br>
+            
+            </div>
+            <div id="botao">
+                <a id="sign" href="cadastro.php" > Não possuí cadastro?</a>
+                <button type="submit">Cadastrar</button>
             </div>
         </form>
-    </div> 
+    </div>
 </body>
 </html>
